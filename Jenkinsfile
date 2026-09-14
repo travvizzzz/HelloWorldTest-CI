@@ -69,6 +69,15 @@ pipeline {
         }
     }
 }
+
+ stage('Performance Testing') {
+            steps {
+                sh '''
+                    chmod +x performance-test.sh
+                    ./performance-test.sh
+                '''
+            }
+        }
     }
 
     post {
